@@ -15,10 +15,8 @@ part 'post_state.dart';
 class PostBloc extends Bloc<PostEvent, PostState> {
   PostBloc() : super(PostInitial()) {
     on<PostInitialFetchEvent>(postInitialFetchEvent);
-    
   }
-
-  FutureOr<void> postInitialFetchEvent(PostInitialFetchEvent event,
+    FutureOr<void> postInitialFetchEvent(PostInitialFetchEvent event,
       Emitter<PostState> emit) async {
     emit(PostFetchingLoadingState());
     try {
